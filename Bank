@@ -1,0 +1,23 @@
+#ifndef BANK_H
+#define BANK_H
+
+#include <string>
+
+struct BankAccount {
+    double checking;
+    double savings;
+};
+
+// Simple text-based protocol commands (for demonstration).
+// Possible client requests: 
+//   CHECK
+//   DEPOSIT <account> <amount>
+//   WITHDRAW <account> <amount>
+//   TRANSFER <from_account> <to_account> <amount>
+//   EXIT
+//
+// Server responds with either an updated balance or an error message.
+
+std::string processRequest(const std::string &request, BankAccount &account);
+
+#endif
